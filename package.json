@@ -1,0 +1,61 @@
+{
+  "name": "beauty-zone",
+  "version": "1.0.0",
+  "description": "application for a company that offers and sells baked goods",
+  "main": "gulpfile.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "cross-env PORT=7070 gulp start --development",
+    "docs": "gulp docs --production"
+  },
+  "homepage": "https://github.com/Sokolova88/Beauty-zone",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sokolova88/Beauty-zone.git"
+  },
+  "author": "anna-sokolova <sokolovaskorik@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sokolova88/Beauty-zone/issues"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.8.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-changed": "^4.0.3",
+    "gulp-clean": "^0.4.0",
+    "gulp-csso": "^4.0.1",
+    "gulp-file-include": "^2.3.0",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-htmlclean": "^2.7.22",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-notify": "^4.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sass-glob": "^1.1.0",
+    "gulp-server-livereload": "^1.9.2",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-svg-sprite": "^2.0.3",
+    "gulp-svgmin": "^4.1.0",
+    "gulp-webp": "^4.0.1",
+    "gulp-webp-css": "^1.1.0",
+    "gulp-webp-html": "^1.0.2",
+    "i": "^0.3.7",
+    "npm": "^9.7.2",
+    "sass": "^1.63.4",
+    "style-loader": "^3.3.3",
+    "webpack-stream": "^7.0.0"
+  },
+  "dependencies": {
+    "badge-maker": "^3.3.1",
+    "swiper": "^11.0.5"
+  }
+}
