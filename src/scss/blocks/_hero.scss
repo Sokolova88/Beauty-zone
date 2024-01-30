@@ -1,0 +1,38 @@
+.hero {
+  padding: 124px 0;
+  text-align: center;
+  margin: 0 auto;
+
+  background-color: var(--secondaryColor);
+  background-image: $hero-overlay, url('../img/bg-header-mob.jpg');
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: $hero-overlay, url('../img/bg-header-mob-2x.jpg');
+  }
+
+  @media screen and (min-width: $laptop) {
+    max-width: 1600px;
+    padding: 272px 0;
+
+    background-image: $hero-overlay, url('../img/bg-header-desk.jpg');
+
+    @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: $hero-overlay, url('../img/bg-header-desk-2x.jpg');
+    }
+  }
+}
+
+.hero__title {
+  color: var(--lightColor);
+  font-size: clamp(58px, 11.37vw, 128px);
+  font-weight: 900;
+}

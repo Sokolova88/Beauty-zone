@@ -1,0 +1,31 @@
+.contacts {
+  @media screen and (min-width: $tablet) {
+    padding-bottom: 96px;
+  }
+
+  &__wrap-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @media screen and (min-width: $tablet) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    &--row {
+      flex-basis: calc((100% - 32px) / 2);
+    }
+  }
+}
+
+.contacts__title {
+  @media screen and (max-width: $laptop) {
+    text-align: center;
+  }
+  @media screen and (min-width: $laptop) {
+    margin-bottom: 16px;
+  }
+}

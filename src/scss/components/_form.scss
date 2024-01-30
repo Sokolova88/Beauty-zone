@@ -1,0 +1,98 @@
+.contacts-form {
+  margin: 0 auto;
+
+  min-width: 250px;
+  min-height: 255px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+
+  &__promo {
+    margin-bottom: 24px;
+    display: block;
+    color: var(--hoverColor);
+
+    @media screen and (min-width: $laptop) {
+      margin-bottom: 42px;
+      display: flex;
+      justify-content: flex-start;
+      font-size: 18px;
+      font-weight: 400;
+    }
+  }
+
+  &__field {
+    position: relative;
+    display: block;
+    margin-bottom: 24px;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 8px 24px;
+    border-radius: 8px;
+    border: 1px solid var(--secondaryColor);
+    font-size: 16px;
+    color: var(--secondaryColor);
+    transition: outline var(--duration) var(--timingFunction);
+
+    @media screen and (min-width: $laptop) {
+      padding: 16px 42px;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 50%;
+    left: 24px;
+    transform: translateY(-50%);
+
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--secondaryColor);
+    transition: transform var(--duration) var(--timingFunction),
+      color var(--duration) var(--timingFunction);
+
+    @media screen and (min-width: $laptop) {
+      left: 42px;
+      font-size: 18px;
+      font-weight: 400;
+    }
+  }
+
+  &__privacy {
+    display: none;
+
+    @media screen and (min-width: $tablet) {
+      display: block;
+      margin: 16px auto 0;
+      max-width: 240px;
+
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--darkColor);
+
+      &-link {
+        text-decoration-line: underline;
+        text-underline-offset: 2px;
+      }
+    }
+  }
+}
+
+// Input states when focused
+
+.contacts-form__field:focus-within > .contacts-form__label,
+.contacts-form__input:not(:placeholder-shown) + .contacts-form__label {
+  transform: translateY(-40px);
+  color: var(--accentColor);
+
+  @media screen and (min-width: $laptop) {
+    transform: translateY(-50px);
+  }
+}
+
+.contacts-form__field:focus-within > .contacts-form__input {
+  outline: 2px solid var(--accentColor);
+  border: none;
+}

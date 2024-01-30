@@ -1,0 +1,89 @@
+/* Nav Icon Btn*/
+.mobile-nav-btn {
+  --time: 0.1s;
+
+  --width: 24px;
+  --height: 24px;
+
+  --line-height: 4px;
+
+  --color: #faf4ea;
+  --radius: 24px;
+
+  height: var(--height);
+  width: var(--width);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  // position: absolute;
+  // top: 16px;
+  // right: 20px;
+}
+
+.nav-icon {
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--color);
+  border-radius: var(--radius);
+}
+
+.nav-icon::before,
+.nav-icon::after {
+  content: '';
+  display: block;
+
+  position: absolute;
+  right: 0;
+
+  width: var(--width);
+  height: 2px;
+
+  border-radius: var(--radius);
+  background-color: var(--color);
+  transition: transform var(--time) ease-in, top var(--time) linear var(--time);
+}
+
+.nav-icon::before {
+  top: calc(-1 * (var(--line-height)));
+  width: 14px;
+}
+
+.nav-icon::after {
+  top: calc(var(--line-height));
+  width: 10px;
+}
+
+.nav-icon.nav-icon--active {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background-color: transparent;
+}
+
+.nav-icon.nav-icon--active::before,
+.nav-icon.nav-icon--active::after {
+  top: 0;
+  transition: top var(--time) linear, transform var(--time) ease-in var(--time);
+}
+
+.nav-icon.nav-icon--active::before {
+  transform: rotate(45deg);
+  background-color: var(--darkColor);
+}
+
+.nav-icon.nav-icon--active::after {
+  transform: rotate(-45deg);
+  background-color: var(--darkColor);
+  width: 14px;
+}
+
+.mobile-nav-btn {
+  z-index: 999;
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+}

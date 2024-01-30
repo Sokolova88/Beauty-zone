@@ -1,0 +1,130 @@
+.formats__title {
+  text-align: center;
+}
+
+//  Slider swiper Formats
+
+.slider-swiper--row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+.slider-swiper__wrapper {
+  margin-bottom: 48px;
+}
+
+// Styles for the card
+.slider-swiper__card {
+  position: relative;
+
+  min-width: 280px;
+  max-width: 350px;
+  height: 442px;
+  margin: 0 auto;
+  border-radius: 16px;
+  background-image: $swiper-slide-overlay;
+  overflow: hidden;
+
+  &-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  &-descr-wrap {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 24px;
+    color: var(--lightColor);
+
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+  }
+
+  &-header {
+    margin-bottom: 12px;
+
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  &-descr {
+    flex-grow: 1;
+  }
+}
+
+// Styles for the pagination's bullets
+.swiper-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.pagination__bullet {
+  width: 8px;
+  height: 8px;
+  background-color: var(--secondaryColor);
+  opacity: 1;
+  cursor: pointer;
+  border-radius: 50%;
+
+  @media screen and (min-width: $tablet) {
+    width: 11px;
+    height: 11px;
+  }
+
+  &--active {
+    background-color: var(--accentColor);
+  }
+}
+
+// The buttons PREV and NEXT
+.button__slider {
+  display: none;
+
+  @media screen and (min-width: $laptop) {
+    width: 44px;
+    height: 44px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    background-color: transparent;
+    border: 1px solid var(--darkColor);
+    border-radius: 50%;
+
+    transition: background-color var(--duration) var(--timingFunction),
+      border var(--duration) var(--timingFunction), color var(--duration) var(--timingFunction);
+
+    &:hover,
+    &:focus {
+      background-color: var(--darkColor);
+      border: 1px solid var(--accentColor);
+    }
+
+    &__icon {
+      width: 20px;
+      height: 14px;
+      object-fit: cover;
+    }
+
+    &:hover &__icon,
+    &:focus &__icon {
+      color: var(--accentColor);
+    }
+
+    &.button-prev {
+      transform: rotate(180deg);
+    }
+  }
+}

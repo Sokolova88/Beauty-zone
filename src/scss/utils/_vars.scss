@@ -1,0 +1,36 @@
+:root {
+  // Fonts
+  --fontMain: 'Poppins', sans-serif;
+
+  // Colors
+  --lightColor: #faf4ea;
+  --darkColor: #31261a;
+  --accentColor: #819b57;
+  --secondaryColor: #a18268;
+  --hoverColor: #465929;
+  --sectionBg: #cfcfbc;
+  --backdropBg: rgba(49, 38, 26, 0.4);
+  --shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  //Animation Properties
+  --duration: 300ms;
+  --timingFunction: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// Breakpoints
+$laptop: 1280px;
+$tablet: 768px;
+$mobile: 480px;
+$container-padding: 20px;
+$hero-overlay: linear-gradient(
+  103deg,
+  rgba(18, 18, 17, 0.78) 2.03%,
+  rgba(18, 18, 17, 0.6) 58.46%,
+  rgba(18, 18, 17, 0) 90.36%
+);
+$swiper-slide-overlay: linear-gradient(
+  180deg,
+  rgba(49, 38, 26, 0) 55.21%,
+  rgba(49, 38, 26, 0.71) 72.92%,
+  #31261a 100%
+);

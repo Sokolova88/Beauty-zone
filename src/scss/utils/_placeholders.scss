@@ -1,0 +1,32 @@
+%button {
+  display: inline-block;
+  min-width: 203px;
+  padding: 16px 24px;
+
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--lightColor);
+
+  border-radius: 8px;
+  border: 2px solid var(--accentColor);
+
+  background-color: var(--accentColor);
+
+  cursor: pointer;
+  transition: background-color var(--duration) var(--timingFunction),
+    box-shadow var(--duration) var(--timingFunction);
+
+  @media screen and (min-width: $laptop) {
+    min-width: 238px;
+    padding: 16px 32px;
+    font-size: 18px;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: var(--hoverColor);
+    box-shadow: var(--shadow);
+  }
+}

@@ -1,0 +1,26 @@
+.nav {
+  display: none;
+  @media screen and (min-width: $tablet) {
+    display: flex;
+  }
+}
+
+.nav__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 64px;
+}
+
+.nav__link {
+  color: var(--lightColor);
+  font-size: 18px;
+  font-weight: 600;
+  transition: color var(--duration) var(--timingFunction),
+    text-shadow var(--duration) var(--timingFunction);
+  &:hover,
+  &:focus {
+    color: var(--accentColor);
+    text-shadow: var(--shadow);
+  }
+}
