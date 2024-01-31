@@ -9,15 +9,19 @@
   padding: 16px 24px;
 
   background-color: var(--lightColor);
-  background-image: url('../img/bg-mobileMenu.png');
+  background-image: url('../img/bg-add.png');
+  background-size: 200px;
   background-position: right bottom;
   background-repeat: no-repeat;
 
   transform: translateX(150%);
   transition: transform var(--duration) var(--timingFunction);
 
-  & .logo__svg--color-dark {
-    color: var(--darkColor);
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url('../img/bg-add@2x.png');
   }
 }
 
@@ -27,10 +31,11 @@
 
 .mobile-nav__list {
   padding-top: 32px;
+  text-align: center;
 }
 
 .mobile-nav__item:not(:last-child) {
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
 .mobile-nav__link {
