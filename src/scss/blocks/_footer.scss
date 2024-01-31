@@ -94,41 +94,6 @@
   }
 }
 
-.social-list {
-  margin-top: 16px;
-  margin-bottom: 8px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 22px;
-
-  @media screen and (min-width: $laptop) {
-    justify-content: flex-start;
-  }
-
-  &__link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background-color: var(--lightColor);
-    transition: background-color var(--duration) var(--timingFunction);
-
-    &:hover,
-    &:focus {
-      background-color: var(--accentColor);
-    }
-  }
-
-  &__icon {
-    color: var(--darkColor);
-  }
-}
-
 .footer__info {
   @media screen and (min-width: $tablet) and (max-width: calc($laptop - 1px)) {
     margin: 0 auto;
