@@ -1,4 +1,4 @@
-.nav {
+.nav-container {
   display: none;
   @media screen and (min-width: $tablet) {
     display: flex;
@@ -9,13 +9,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 64px;
+  gap: 56px;
 }
 
 .nav__link {
-  color: var(--lightColor);
+  color: var(--darkColor);
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 400;
   transition: color var(--duration) var(--timingFunction),
     text-shadow var(--duration) var(--timingFunction);
   &:hover,
