@@ -1,13 +1,12 @@
-.logo__svg {
-  width: 72px;
-  height: 38px;
+.logo__text {
+  font-family: var(--fontHeader);
+  font-size: 16px;
+  line-height: 0.93;
+  text-transform: capitalize;
+  color: var(--accentColor);
 
   @media screen and (min-width: $laptop) {
-    width: 114px;
-    height: 56px;
+    font-size: 22px;
+    line-height: 0.95;
   }
-}
-
-.logo__svg--color-light {
-  color: var(--lightColor);
 }
