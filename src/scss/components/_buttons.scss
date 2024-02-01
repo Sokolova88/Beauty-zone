@@ -10,9 +10,8 @@
   }
 }
 
-.button--mobile {
+.button--call {
   @extend %button;
-  margin-top: 48px;
 
   @media screen and (min-width: $laptop) {
     display: none;
