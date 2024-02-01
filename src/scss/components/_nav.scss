@@ -2,6 +2,13 @@
   display: none;
   @media screen and (min-width: $tablet) {
     display: flex;
+    align-items: center;
+    gap: 40px;
+    text-align: center;
+  }
+
+  @media screen and (min-width: $laptop) {
+    gap: 240px;
   }
 }
 
@@ -9,7 +16,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 56px;
+  gap: 24px;
+  @media screen and (min-width: $laptop) {
+    gap: 56px;
+  }
 }
 
 .nav__link {
