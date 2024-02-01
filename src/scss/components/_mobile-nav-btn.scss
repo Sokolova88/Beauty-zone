@@ -7,7 +7,7 @@
 
   --line-height: 4px;
 
-  --color: #faf4ea;
+  --color: var(--accentColor);
   --radius: 24px;
 
   height: var(--height);
@@ -16,10 +16,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  // position: absolute;
-  // top: 16px;
-  // right: 20px;
 }
 
 .nav-icon {

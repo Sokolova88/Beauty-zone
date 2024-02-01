@@ -1,10 +1,10 @@
 .hero {
-  padding: 124px 0;
+  padding: 70px 0;
   text-align: center;
   margin: 0 auto;
 
-  background-color: var(--secondaryColor);
-  background-image: $hero-overlay, url('../img/bg-header-mob.jpg');
+  background-color: var(--lightColor);
+  background-image: url('../img/hero-bg-mobile.png');
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
@@ -13,26 +13,74 @@
     (-webkit-min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
-    background-image: $hero-overlay, url('../img/bg-header-mob-2x.jpg');
+    background-image: url('../img/hero-bg-mobile@2x.png');
   }
 
-  @media screen and (min-width: $laptop) {
+  @media screen and (min-width: $tablet) {
     max-width: 1600px;
-    padding: 272px 0;
+    padding: 126px 0;
 
-    background-image: $hero-overlay, url('../img/bg-header-desk.jpg');
+    background-image: url('../img/hero-bg-desktop.png');
 
     @media (min-device-pixel-ratio: 2),
       (-webkit-min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
-      background-image: $hero-overlay, url('../img/bg-header-desk-2x.jpg');
+      background-image: url('../img/hero-bg-desktop@2x.png');
     }
   }
 }
 
+.hero--inner {
+  @media screen and (min-width: $tablet) {
+    text-align: start;
+  }
+}
+
 .hero__title {
-  color: var(--lightColor);
-  font-size: clamp(58px, 11.37vw, 128px);
-  font-weight: 900;
+  margin-bottom: 32px;
+
+  font-family: var(--fontHeader);
+  font-weight: 700;
+  font-size: 54px;
+  line-height: 0.85;
+  text-transform: capitalize;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 40px;
+    max-width: 530px;
+    font-size: 140px;
+  }
+
+  &--small {
+    display: block;
+    font-family: var(--fontMain);
+    color: var(--darkColor);
+    font-size: 12px;
+    line-height: 1.5;
+    text-transform: none;
+
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 16px;
+      font-size: 18px;
+      line-height: 1.2;
+    }
+  }
+}
+
+.hero__text {
+  margin: 8px auto 0;
+  max-width: 186px;
+
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--secondaryColor);
+  text-align: center;
+
+  @media screen and (min-width: $tablet) {
+    margin: 14px 0 0;
+    max-width: 238px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
 }

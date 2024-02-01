@@ -6,8 +6,8 @@
   justify-content: center;
   gap: 16px;
 
-  @media screen and (min-width: $laptop) {
-    justify-content: flex-start;
+  @media screen and (min-width: $tablet) {
+    margin-top: 0;
   }
 
   &__link {
