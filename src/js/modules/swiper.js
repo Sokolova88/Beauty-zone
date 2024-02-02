@@ -10,7 +10,7 @@ const swiper = new Swiper('.swiper', {
   modules: [Navigation, Pagination],
   loop: true,
   slidesPerView: 1,
-  spaceBetween: 20,
+  spaceBetween: 16,
   grabCursor: true,
 
   breakpoints: {
