@@ -1,3 +1,7 @@
+.about__title {
+  margin-bottom: 40px;
+}
+
 .about--padding {
   padding-top: 0;
   @media screen and (max-width: 400px) {
@@ -17,17 +21,6 @@
     flex-basis: 710px;
     margin-top: 40px;
   }
-}
-
-.about__title {
-  @media screen and (max-width: calc($tablet - 1px)) {
-    font-family: var(--fontMain);
-    font-size: 32px;
-    font-weight: 500;
-    line-height: 1.2;
-  }
-
-  font-family: var(--fontHeader);
 }
 
 .about-descr__text {
