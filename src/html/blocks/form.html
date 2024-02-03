@@ -1,29 +1,40 @@
 <form name="contactsForm" class="contacts-form" autocomplete="off">
-  <b class="contacts-form__promo">Заповни форму, щоб ми звʼязались з тобою!</b>
+  <b class="contacts-form__promo"
+    >Запишіться <span class="accent-color">безкоштовно</span> та отримайте подарунок
+  </b>
   <label class="contacts-form__field">
     <input
       class="contacts-form__input"
       type="text"
       name="userName"
       placeholder=" "
-      minlength="2"
+      pattern="[A-Za-zА-Яа-яґҐІіЇїЄє'\s-]{2,}"
+      title="Введіть ваше ім'я та прізвище"
       required
     />
-    <span class="contacts-form__label">Ім’я</span>
+    <span class="contacts-form__label">Ваше ім'я та прізвище</span>
   </label>
 
   <label class="contacts-form__field">
-    <input class="contacts-form__input" type="tel" name="userPhone" placeholder=" " required />
-    <span class="contacts-form__label">Телефон</span>
+    <input
+      class="contacts-form__input"
+      type="tel"
+      name="userPhone"
+      placeholder=" "
+      pattern="[0-9]{10}"
+      title="Введіть номер телефону в форматі: 0671112233"
+      required
+    />
+    <span class="contacts-form__label">Ваш номер телефону</span>
   </label>
 
   <label class="contacts-form__field">
     <input class="contacts-form__input" type="email" name="userEmail" placeholder=" " required />
-    <span class="contacts-form__label">Електронна пошта</span>
+    <span class="contacts-form__label">Ваша електронна пошта</span>
   </label>
-  <button type="submit" class="button-submit">Замовити дзвінок</button>
+  <button type="submit" class="button-submit">Записатись безкоштовно</button>
   <p class="contacts-form__privacy">
-    Натискаючи на кнопку я погоджуюсь з
-    <a class="contacts-form__privacy-link" href="#">політикою конфіденційності</a>
+    Натискаючи на кнопку я погоджуюсь
+    <a class="contacts-form__privacy-link" href="#">з політикою конфіденційності</a>
   </p>
 </form>
