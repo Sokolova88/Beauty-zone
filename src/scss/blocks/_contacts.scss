@@ -11,21 +11,14 @@
     @media screen and (min-width: $tablet) {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: center;
       gap: 32px;
     }
 
     &--row {
-      flex-basis: calc((100% - 32px) / 2);
+      @media screen and (min-width: $tablet) {
+        order: 1;
+      }
     }
-  }
-}
-
-.contacts__title {
-  @media screen and (max-width: $laptop) {
-    text-align: center;
-  }
-  @media screen and (min-width: $laptop) {
-    margin-bottom: 16px;
   }
 }
