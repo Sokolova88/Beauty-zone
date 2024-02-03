@@ -4,4 +4,14 @@
 
 .button-submit {
   @extend %button;
+  width: 100%;
+  border-radius: 32px;
+
+  &:hover,
+  &:focus {
+    color: var(--lightColor);
+    background-color: transparent;
+    border: 2px solid var(--accentColor);
+    box-shadow: var(--shadow);
+  }
 }
