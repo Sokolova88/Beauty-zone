@@ -4,13 +4,13 @@
 @import './utils/utils';
 @import './utils/placeholders';
 
-// /* Base */
+/* Base */
 @import './base/normalize';
 @import './base/fonts';
 @import './base/common';
 @import './base/containers';
 
-// /* Components*/
+/* Components*/
 @import './components/logo';
 @import './components/mobile-nav-btn';
 @import './components/mobile-nav';
@@ -19,7 +19,7 @@
 @import './components/buttons';
 @import './components/form';
 @import './components/map';
-// @import './components/modal';
+/*@import './components/modal';*/
 
-// /* Blocks */
+/* Blocks */
 @import './blocks/*.scss';
