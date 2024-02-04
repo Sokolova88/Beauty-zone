@@ -5,9 +5,9 @@
   text-align: center;
 
   background-color: var(--darkColor);
-  background-image: url('../img/bg-footerOverlay-mobile.png');
+  background-image: url('../img/vector-bg.png');
   background-repeat: no-repeat;
-  background-position: center bottom;
+  background-position: center;
   background-size: cover;
   object-fit: cover;
 
@@ -15,22 +15,48 @@
     (-webkit-min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
-    background-image: url('../img/bg-footerOverlay-mobile@2x.png');
+    background-image: url('../img/vector-bg@2x.png');
   }
 
   @media screen and (min-width: $tablet) {
     max-width: 1600px;
     margin: 0 auto;
     text-align: left;
-    background-image: url('../img/bg-footerOverlay-desctop.png');
-    background-position: left bottom;
+    background-image: url('../img/bg-add.png'), url('../img/footer-bg.png');
+    background-size: 200px, cover;
+    background-position: right bottom, left bottom;
 
     @media (min-device-pixel-ratio: 2),
       (-webkit-min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
-      background-image: url('../img/bg-footerOverlay-desctop@2x.png');
+      background-image: url('../img/bg-add@2x.png'), url('../img/footer-bg@2x.png');
     }
+  }
+
+  & .logo__text {
+    display: inline-block;
+    text-align: start;
+  }
+
+  & .address {
+    @media screen and (max-width: calc($tablet - 1px)) {
+      display: none;
+    }
+  }
+
+  & .social-list {
+    margin-top: 16px;
+    gap: 20px;
+    @media screen and (min-width: $laptop) {
+      gap: 24px;
+    }
+  }
+
+  & .social-list__icon {
+    width: 32px;
+    height: 32px;
+    color: var(--lightColor);
   }
 }
 
@@ -44,27 +70,23 @@
   }
 
   @media screen and (min-width: $laptop) {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 166px;
+    gap: 186px;
   }
 }
 
 .footer__nav {
-  margin-top: 32px;
-  margin-bottom: 18px;
+  margin-top: 42px;
+  margin-bottom: 16px;
+  font-size: 14px;
 
   @media screen and (min-width: $tablet) {
     margin-top: 0;
     margin-bottom: 0;
-
-    font-size: 18px;
-    font-weight: 400;
+    font-size: 16px;
   }
 
   &__item:not(:last-child) {
-    margin-bottom: 18px;
+    margin-bottom: 16px;
 
     @media screen and (min-width: $laptop) {
       margin-bottom: 16px;
@@ -82,10 +104,11 @@
 }
 
 .address__item:not(:last-child) {
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .address__link {
+  font-size: 16px;
   transition: color var(--duration) var(--timingFunction);
 
   &:hover,
@@ -101,12 +124,15 @@
 
   &-copy {
     margin-top: 8px;
-    color: var(--secondaryColor);
+    color: var(--policeColor);
     font-size: 12px;
+    line-height: 1.5;
+    text-align: center;
 
     @media screen and (min-width: $laptop) {
-      font-size: 14px;
-      font-weight: 400;
+      margin-top: 16px;
+      font-size: 13px;
+      text-align: start;
     }
   }
 }
