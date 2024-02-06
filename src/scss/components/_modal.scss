@@ -23,6 +23,10 @@
     .modal {
       transform: scale(0);
       opacity: 0;
+
+      @media screen and (min-width: $tablet) {
+        transform: translate(-50%, -50%) scale(0);
+      }
     }
   }
 }
@@ -54,6 +58,7 @@
 
   .contacts-form__modal {
     margin: 0 auto;
+    padding: 48px 56px 0;
     @media screen and (max-width: calc($laptop - 1px)) {
       padding: 24px 16px 0;
     }
@@ -67,7 +72,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1);
 
     max-width: 450px;
     padding: 80px 40px;
@@ -75,6 +80,7 @@
 
   @media screen and (min-width: $laptop) {
     max-width: 700px;
+    padding: 42px;
   }
 }
 
