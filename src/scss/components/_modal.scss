@@ -4,9 +4,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 20;
+  z-index: 1000;
   background-color: var(--backdropBg);
-  padding: 50px 20px;
+  padding: 70px 20px;
   overflow-y: auto;
 
   opacity: 1;
@@ -29,15 +29,14 @@
 
 .modal {
   position: relative;
-  min-height: 400px;
   width: 100%;
-  height: 100%;
   padding: 60px 20px;
   margin: 0 auto;
   border-radius: 32px;
-  background-color: var(--lightColor);
-  background-image: url('../img/bg-mobileMenu.png');
-  background-position: right bottom;
+  background-color: #011c44;
+  background-image: url('../img/vector-bg.png');
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   overflow-y: auto;
   text-align: center;
@@ -46,13 +45,45 @@
   transition: transform var(--duration) var(--timingFunction),
     opacity var(--duration) var(--timingFunction);
 
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url('../img/vector-bg@2x.png');
+  }
+
+  .contacts-form__modal {
+    margin: 0 auto;
+    @media screen and (max-width: calc($laptop - 1px)) {
+      padding: 24px 16px 0;
+    }
+  }
+
+  .contacts-form__promo__modal {
+    font-size: 18px;
+  }
+
   @media screen and (min-width: $tablet) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
     max-width: 450px;
     padding: 80px 40px;
   }
 
   @media screen and (min-width: $laptop) {
-    max-width: 550px;
+    max-width: 700px;
+  }
+}
+
+.modal__title {
+  margin: 0 auto;
+  font-size: 26px;
+  color: var(--lightColor);
+  @media screen and (max-width: $tablet) {
+    font-size: 26px;
   }
 }
 
@@ -65,7 +96,7 @@
   height: 40px;
 
   &--icon {
-    stroke: var(--darkColor);
+    stroke: var(--lightColor);
     stroke-width: 2px;
     transition: stroke var(--duration) var(--timingFunction),
       transform var(--duration) var(--timingFunction);
