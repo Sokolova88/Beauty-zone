@@ -118,10 +118,15 @@
 }
 
 .footer__info {
+  margin-top: 16px;
+  font-size: 14px;
+
   @media screen and (min-width: $tablet) and (max-width: calc($laptop - 1px)) {
     margin: 0 auto;
   }
-
+  @media screen and (min-width: $laptop) {
+    font-size: 16px;
+  }
   &-copy {
     margin-top: 8px;
     color: var(--policeColor);
