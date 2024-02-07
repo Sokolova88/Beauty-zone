@@ -1,25 +1,29 @@
-.about__title {
-  margin-bottom: 40px;
-}
+.about {
+  position: relative;
 
-.about--padding {
-  padding-top: 0;
-  @media screen and (max-width: 400px) {
-    padding-bottom: 46px;
+  &--padding {
+    padding-top: 0;
+    @media screen and (max-width: 400px) {
+      padding-bottom: 46px;
+    }
   }
-}
 
-.about--row {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 28px;
-}
+  &--row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 28px;
+  }
 
-.about--inner {
-  @media screen and (min-width: $tablet) {
-    flex-basis: 710px;
-    margin-top: 40px;
+  &--inner {
+    @media screen and (min-width: $tablet) {
+      flex-basis: 710px;
+      margin-top: 40px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 40px;
   }
 }
 
@@ -44,7 +48,52 @@
 }
 
 .about-img--inner {
+  position: relative;
   @media screen and (max-width: $tablet) {
     display: none;
+  }
+}
+
+.about-stars {
+  &__icon {
+    position: absolute;
+
+    animation-name: changeColor;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+  }
+
+  &__icon--blue {
+    bottom: 0;
+    right: 10%;
+
+    @media screen and (min-width: $tablet) {
+      top: 0;
+    }
+  }
+
+  &__icon--dark {
+    display: none;
+
+    @media screen and (min-width: $laptop) {
+      display: block;
+      bottom: 40%;
+      left: 20%;
+      animation-delay: 500ms;
+    }
+  }
+
+  &__icon--grey {
+    display: none;
+
+    @media screen and (min-width: $laptop) {
+      display: block;
+      top: 40%;
+      right: 0;
+      animation-delay: 1000ms;
+    }
   }
 }
