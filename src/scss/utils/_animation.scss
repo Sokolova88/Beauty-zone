@@ -1,0 +1,16 @@
+@keyframes changeColor {
+  0% {
+    color: var(--policeColor);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    color: var(--accentColor);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  100% {
+    color: var(--darkColor);
+    transform: scale3d(1, 1, 1);
+  }
+}
