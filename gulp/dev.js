@@ -19,7 +19,7 @@ const imagemin = require('gulp-imagemin');
 const changed = require('gulp-changed');
 const svgmin = require('gulp-svgmin');
 const svgSprite = require('gulp-svg-sprite');
-
+const realFavicon = require('gulp-real-favicon');
 //
 // Таска для удаления файлов с папки build перед новой сборкой проекта
 //
@@ -81,6 +81,11 @@ gulp.task('html:dev', function () {
     .pipe(changed('./build/', { hasChanged: changed.compareContents }))
     .pipe(plumber(plumberNotify('HTML')))
     .pipe(fileInclude())
+    .pipe(
+      realFavicon.injectFaviconMarkups(
+        JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).favicon.html_code,
+      ),
+    )
     .pipe(gulp.dest('./build/'));
 });
 
@@ -107,12 +112,14 @@ gulp.task('sass:dev', function () {
 // Таска для копирования и минимизации изображений
 //
 gulp.task('images:dev', function () {
-  return gulp
-    .src('./src/img/**/*')
-    .pipe(newer('./build/img/')) /* проверяет на наличие новых img */
-    .pipe(changed('./build/img/'))
-    .pipe(imagemin({ verbose: true }))
-    .pipe(gulp.dest('./build/img/'));
+  return (
+    gulp
+      .src('./src/img/**/*')
+      .pipe(newer('./build/img/')) /* проверяет на наличие новых img */
+      .pipe(changed('./build/img/'))
+      // .pipe(imagemin({ verbose: true }))
+      .pipe(gulp.dest('./build/img/'))
+  );
 });
 
 //
@@ -161,6 +168,85 @@ gulp.task('js:dev', function () {
   );
 });
 
+// File where the favicon markups are stored
+const FAVICON_DATA_FILE = 'faviconData.json';
+
+// Generate the icons. This task takes a few seconds to complete.
+gulp.task('generate-favicon', function (done) {
+  realFavicon.generateFavicon(
+    {
+      masterPicture: './src/img/favicon/favicon.png',
+      dest: './build/img/favicon',
+      iconsPath: './img/favicon',
+      design: {
+        ios: {
+          pictureAspect: 'backgroundAndMargin',
+          backgroundColor: '#e8ffff',
+          margin: '14%',
+          assets: {
+            ios6AndPriorIcons: false,
+            ios7AndLaterIcons: false,
+            precomposedIcons: false,
+            declareOnlyDefaultIcon: true,
+          },
+        },
+        desktopBrowser: {
+          design: 'background',
+          backgroundColor: '#e8ffff',
+          backgroundRadius: 0.45,
+          imageScale: 0.9,
+        },
+        windows: {
+          pictureAspect: 'noChange',
+          backgroundColor: '#e8ffff',
+          onConflict: 'override',
+          assets: {
+            windows80Ie10Tile: false,
+            windows10Ie11EdgeTiles: {
+              small: false,
+              medium: true,
+              big: false,
+              rectangle: false,
+            },
+          },
+        },
+        androidChrome: {
+          pictureAspect: 'backgroundAndMargin',
+          margin: '17%',
+          backgroundColor: '#e8ffff',
+          themeColor: '#e8ffff',
+          manifest: {
+            name: 'Beauty Zone',
+            display: 'standalone',
+            orientation: 'notSet',
+            onConflict: 'override',
+            declared: true,
+          },
+          assets: {
+            legacyIcon: false,
+            lowResolutionIcons: false,
+          },
+        },
+        safariPinnedTab: {
+          pictureAspect: 'silhouette',
+          themeColor: '#5bbad5',
+        },
+      },
+      settings: {
+        scalingAlgorithm: 'Mitchell',
+        errorOnImageTooSmall: false,
+        readmeFile: false,
+        htmlCodeFile: false,
+        usePathAsIs: false,
+      },
+      markupFile: FAVICON_DATA_FILE,
+    },
+    function () {
+      done();
+    },
+  );
+});
+
 //
 // Таска для старта Live Server
 //
@@ -178,6 +264,7 @@ gulp.task('server:dev', function () {
 // Таска для отслеживания задач проекта и автоматической пересборки
 //
 gulp.task('watch:dev', function () {
+  gulp.watch('./src/img/favicon', gulp.parallel('generate-favicon'));
   gulp.watch('./src/scss/**/*.scss', gulp.parallel('sass:dev'));
   gulp.watch('./src/html/**/*.html', gulp.parallel('html:dev'));
   gulp.watch('./src/img/**/*', gulp.parallel('images:dev'));
