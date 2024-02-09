@@ -9,6 +9,7 @@ gulp.task(
   gulp.series(
     'clean:dev',
     gulp.parallel(
+      'generate-favicon',
       'html:dev',
       'sass:dev',
       'images:dev',
@@ -26,6 +27,7 @@ gulp.task(
   gulp.series(
     'clean:docs',
     gulp.parallel(
+      'generate-favicon',
       'html:docs',
       'sass:docs',
       'images:docs',

@@ -30,6 +30,7 @@ const changed = require('gulp-changed');
 // Images
 const imagemin = require('gulp-imagemin');
 const webp = require('gulp-webp');
+const realFavicon = require('gulp-real-favicon');
 
 // SVG
 const svgmin = require('gulp-svgmin');
@@ -97,6 +98,11 @@ gulp.task('html:docs', function () {
       .pipe(changed('./docs/'))
       .pipe(plumber(plumberNotify('HTML')))
       .pipe(fileInclude())
+      .pipe(
+        realFavicon.injectFaviconMarkups(
+          JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).favicon.html_code,
+        ),
+      )
       // .pipe(webpHTML())
       .pipe(htmlclean())
       .pipe(gulp.dest('./docs/'))
@@ -180,6 +186,85 @@ gulp.task('js:docs', function () {
     .pipe(babel())
     .pipe(webpack(require('./../webpack.config.js')))
     .pipe(gulp.dest('./docs/js/'));
+});
+
+// File where the favicon markups are stored
+const FAVICON_DATA_FILE = 'faviconData.json';
+
+// Generate the icons. This task takes a few seconds to complete.
+gulp.task('generate-favicon', function (done) {
+  realFavicon.generateFavicon(
+    {
+      masterPicture: './src/img/favicon/favicon.png',
+      dest: './docs/img/favicon',
+      iconsPath: './img/favicon',
+      design: {
+        ios: {
+          pictureAspect: 'backgroundAndMargin',
+          backgroundColor: '#e8ffff',
+          margin: '14%',
+          assets: {
+            ios6AndPriorIcons: false,
+            ios7AndLaterIcons: false,
+            precomposedIcons: false,
+            declareOnlyDefaultIcon: true,
+          },
+        },
+        desktopBrowser: {
+          design: 'background',
+          backgroundColor: '#e8ffff',
+          backgroundRadius: 0.45,
+          imageScale: 0.9,
+        },
+        windows: {
+          pictureAspect: 'noChange',
+          backgroundColor: '#e8ffff',
+          onConflict: 'override',
+          assets: {
+            windows80Ie10Tile: false,
+            windows10Ie11EdgeTiles: {
+              small: false,
+              medium: true,
+              big: false,
+              rectangle: false,
+            },
+          },
+        },
+        androidChrome: {
+          pictureAspect: 'backgroundAndMargin',
+          margin: '17%',
+          backgroundColor: '#e8ffff',
+          themeColor: '#e8ffff',
+          manifest: {
+            name: 'Beauty Zone',
+            display: 'standalone',
+            orientation: 'notSet',
+            onConflict: 'override',
+            declared: true,
+          },
+          assets: {
+            legacyIcon: false,
+            lowResolutionIcons: false,
+          },
+        },
+        safariPinnedTab: {
+          pictureAspect: 'silhouette',
+          themeColor: '#5bbad5',
+        },
+      },
+      settings: {
+        scalingAlgorithm: 'Mitchell',
+        errorOnImageTooSmall: false,
+        readmeFile: false,
+        htmlCodeFile: false,
+        usePathAsIs: false,
+      },
+      markupFile: FAVICON_DATA_FILE,
+    },
+    function () {
+      done();
+    },
+  );
 });
 
 //
