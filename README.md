@@ -36,7 +36,7 @@ Welcome to Beauty-zone, application for a cosmetology clinic that will give you 
 
 - Desktop, tablet, mobile - **adaptive layout**
 - **BEM methodology**
-- Header for easy navigation and mobile menu
+- Sticky header for easy navigation and mobile menu
 - Hero section with a "Request a call" CTA button
 - Modal window for feedback with clients
 - About company
@@ -57,13 +57,19 @@ Welcome to Beauty-zone, application for a cosmetology clinic that will give you 
 
 ## Screenshots
 
-![Home Page](./src/img/screen/main-page.png) _Caption for Screenshot 1 - Hero Section_
+![Home Page](./src/screen/header-page.png) _Caption for Screenshot 1 - Header Section_
 
 <p align="center">
-  <img src="./src/img/screen/main-content.png" alt="Screenshot 2 - Main Section">
+  <img src="./src/screen/main-page.png" alt="Screenshot 2 - Main Section">
 </p>
 
 _Caption for Screenshot 2 - Main Section_
+
+<p align="center">
+  <img src="./src/screen/footer-page.png" alt="Screenshot 3 - Footer Section">
+</p>
+
+_Caption for Screenshot 3 - Footer Section_
 
 ## Issues
 
