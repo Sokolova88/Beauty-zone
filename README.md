@@ -27,7 +27,7 @@ Welcome to Beauty-zone, application for a cosmetology clinic that will give you 
 
 ## Overview
 
-<img align="right" src="./img/icons/logo.svg" width="60" height="40" color="black"/>
+<img align="right" src="./img/favicon/favicon.png" width="60" height="40" color="black"/>
 
 <!-- **Beauty-zone**  -----Overview-----
  -->
