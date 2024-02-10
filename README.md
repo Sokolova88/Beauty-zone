@@ -27,10 +27,19 @@ Welcome to Beauty-zone, application for a cosmetology clinic that will give you 
 
 ## Overview
 
-<img align="right" src="./img/favicon/favicon.png" width="60" height="40" color="black"/>
+<image align="right" src="./img/favicon/favicon.png" alt="Logo company" width="60" height="40" color="#2B7FFF"/>
 
-<!-- **Beauty-zone**  -----Overview-----
- -->
+**Beauty Zone** is an application for a cosmetology clinic, with a pleasant and convenient
+interface. The clinic offers professional skin care services for the face and body. Slogan "Beauty
+Zone" - "Beauty is forever with us!"
+
+The application contains a fixed header, a main section with a button "Order a call" and sections
+with information about the clinic, about benefits and procedures, a section with a map and a form
+for signing up for procedures. The footer contains all the contact information for communication.
+
+In addition, users can fill out the procedure registration form through a modal window.
+
+In mobile mode, all navigation is hidden and can be opened via the burger button.
 
 ## Features
 
