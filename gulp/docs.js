@@ -192,7 +192,7 @@ gulp.task('js:docs', function () {
 const FAVICON_DATA_FILE = 'faviconData.json';
 
 // Generate the icons. This task takes a few seconds to complete.
-gulp.task('generate-favicon', function (done) {
+gulp.task('generate-favicon:docs', function (done) {
   realFavicon.generateFavicon(
     {
       masterPicture: './src/img/favicon/favicon.png',
